@@ -4,6 +4,30 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Energy Beauty Bar</title>
+        <style>
+            /* Minimal layout to keep image left + form right */
+            .order-wrap {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+                align-items: start;
+            }
+
+            @media (max-width: 900px) {
+                .order-wrap {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .offer-img {
+                width: 100%;
+                max-width: 380px;
+                height: auto;
+                display: block;
+                margin: 0 0 12px;
+                object-fit: contain;
+            }
+        </style>
     </head>
     <body>
         <!-- Order -->
@@ -13,17 +37,17 @@
                     <div>
                         <h2>Rendelés</h2>
                         <p>Töltse ki az alábbi űrlapot. Irreális ígéretek nélkül: egyszerű ápolás, az Ön tempójában.</p>
-
-                        <img
-                            src="images/12121.png"
-                            alt="Energy Beauty Bar ajánlat fotó"
-                            loading="lazy"
-                        />
                     </div>
                 </div>
 
                 <div class="order-wrap">
                     <div class="card pricebox">
+                        <img
+                            class="offer-img"
+                            src="images/12121.png"
+                            alt="Energy Beauty Bar ajánlat fotó"
+                            loading="lazy"
+                        />
                         <h3 style="margin:0 0 4px">Energy Beauty Bar</h3>
                         <p class="subprice">Arc- és nyakmasszázs eszköz • Magyarország</p>
 
