@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Energy Beauty Bar</title>
+        <style>
+            /* Minimal layout to keep image left + form right */
+            .order-wrap {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+                align-items: start;
+            }
+
+            @media (max-width: 900px) {
+                .order-wrap {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .offer-img {
+                width: 100%;
+                max-width: 380px;
+                height: auto;
+                display: block;
+                margin: 0 0 12px;
+                object-fit: contain;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Order -->
+        <section id="commander">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h2>Rendelés</h2>
+                        <p>Töltse ki az alábbi űrlapot. Irreális ígéretek nélkül: egyszerű ápolás, az Ön tempójában.</p>
+                    </div>
+                </div>
+
+                <div class="order-wrap">
+                    <div class="card pricebox">
+                        <img
+                            class="offer-img"
+                            src="images/12121.png"
+                            alt="Energy Beauty Bar ajánlat fotó"
+                            loading="lazy"
+                        />
+                        <h3 style="margin:0 0 4px">Energy Beauty Bar</h3>
+                        <p class="subprice">Arc- és nyakmasszázs eszköz • Magyarország</p>
+
+                        <div class="divider"></div>
+
+                        <div class="price">18 500 HUF</div>
+                        <p class="subprice">ÁFA-t tartalmaz (a feltételek szerint) • Szállítás a véglegesítéskor számítva</p>
+
+                        <div style="margin-top:12px" class="trust-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path
+                                    d="M12 3l8 4v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                            </svg>
+                            Világos információk • Visszaszámlálás nélkül • Rejtett előfizetés nélkül
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin:0 0 8px">Az Ön adatai</h3>
+                        <form id="orderForm" novalidate>
+                            <div class="row">
+                                <div class="field">
+                                    <label for="nom">Teljes név</label>
+                                    <input
+                                        id="nom"
+                                        name="nom"
+                                        type="text"
+                                        autocomplete="name"
+                                        placeholder="Az Ön neve"
+                                        required
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        autocomplete="email"
+                                        placeholder="az.on@email.hu"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="field">
+                                    <label for="tel">Telefon (opcionális)</label>
+                                    <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="+36 30 000 0000" />
+                                </div>
+                                <div class="field">
+                                    <label for="pays">Ország</label>
+                                    <select id="pays" name="pays" required>
+                                        <option value="HU" selected>Magyarország</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="adresse">Cím</label>
+                                <input
+                                    id="adresse"
+                                    name="adresse"
+                                    type="text"
+                                    autocomplete="street-address"
+                                    placeholder="Utca, házszám, emelet"
+                                    required
+                                />
+                            </div>
+
+                            <div class="row">
+                                <div class="field">
+                                    <label for="cp">Irányítószám</label>
+                                    <input id="cp" name="cp" type="text" autocomplete="postal-code" placeholder="1000" required />
+                                </div>
+                                <div class="field">
+                                    <label for="ville">Város</label>
+                                    <input
+                                        id="ville"
+                                        name="ville"
+                                        type="text"
+                                        autocomplete="address-level2"
+                                        placeholder="Budapest"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="note">Megjegyzések (opcionális)</label>
+                                <textarea id="note" name="note" rows="3" placeholder="További információk (opcionális)"></textarea>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit" aria-label="Rendelés megerősítése">
+                                Rendelés megerősítése
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path
+                                        d="M13 6l6 6-6 6"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+
+                            <div class="fineprint">
+                                A megerősítéssel elfogadja az <a href="#" data-modal="cgv">Általános feltételeket</a> és az
+                                <a href="#" data-modal="privacy">Adatvédelmi szabályzatot</a>. Rejtett kötelezettségek nélkül.
+                            </div>
+
+                            <div id="successMsg" class="success" role="status" aria-live="polite">
+                                Köszönjük! Rendelését rögzítettük. Valós implementációban visszaigazolást küldünk emailben.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
