@@ -1,0 +1,385 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #202020;
+  background: #f2f7ff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 1.1rem;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.left,
+.right,
+.column_1,
+.column_2,
+.bleft,
+.bright {
+  float: none;
+}
+
+section,
+.intro-screen,
+.second-screen,
+.s-actions,
+.third-screen,
+.fourth-screen,
+.beneficios,
+.action-screen,
+.reviews-screen,
+.answers-sreen,
+.instructions-block,
+.footer {
+  padding: 40px 0;
+}
+
+.intro-screen__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 32px;
+  align-items: start;
+}
+
+.intro-screen__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.intro-screen__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.intro-screen__product {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.intro-screen__product-image {
+  max-width: 320px;
+}
+
+.intro-screen__form-wrapper,
+.modal__form-wrapper,
+.footer .right form {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+}
+
+.intro-screen__form,
+.modal__form,
+.footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.intro-screen__input,
+.modal__input,
+.field {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.intro-screen__input-wrapper,
+.modal__input-wrapper {
+  position: relative;
+}
+
+.intro-screen__whatsapp-icon,
+.modal__whatsapp-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.intro-screen__button,
+.modal__button,
+.button__text {
+  width: 100%;
+}
+
+.button,
+button {
+  cursor: pointer;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #0a67c9;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+}
+
+.button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.intro-screen__price-block,
+.price-block,
+.modal__price-block {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.intro-screen__price-old,
+.price-block .old,
+.modal__price-old {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.intro-screen__price-new,
+.price-block .new,
+.modal__price-new {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a67c9;
+}
+
+.second-screen .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.second-screen .column_1,
+.second-screen .column_2 {
+  flex: 1 1 280px;
+}
+
+.second-screen picture {
+  flex: 0 1 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.s-actions .actions-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.s-actions .actions-inner > div {
+  max-width: 700px;
+}
+
+.b-pluses,
+.b-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.magic-photo {
+  max-width: 600px;
+  margin: 24px auto;
+}
+
+.third-screen .inner-wrapper,
+.instructions-block .inner-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.fourth-screen .inner-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.fourth-screen .inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.beneficios .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 32px;
+  align-items: center;
+}
+
+.beneficios .item-li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.beneficios .item-li svg {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.action-screen .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.action-screen .left {
+  flex: 1 1 320px;
+}
+
+.action-screen .woman {
+  flex: 0 1 320px;
+  max-width: 360px;
+}
+
+.reviews-screen .data-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  text-align: center;
+}
+
+.slider-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+  gap: 16px;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slider-photo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.answers-sreen .accordion__item,
+.action-screen .accordion__item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.footer .inner-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.footer .left,
+.footer .right {
+  flex: 1 1 320px;
+}
+
+footer.footer {
+  background: #f8f8f8;
+}
+
+footer.footer a {
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .intro-screen__container {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-screen__form-wrapper {
+    max-width: none;
+  }
+
+  .beneficios .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  section,
+  .intro-screen,
+  .second-screen,
+  .s-actions,
+  .third-screen,
+  .fourth-screen,
+  .beneficios,
+  .action-screen,
+  .reviews-screen,
+  .answers-sreen,
+  .instructions-block,
+  .footer {
+    padding: 28px 0;
+  }
+}
