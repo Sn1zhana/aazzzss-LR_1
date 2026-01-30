@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Easy Loss — apoyo para el control de peso</title>
+  <meta name="description" content="Easy Loss son gotas naturales para el apoyo diario del control de peso y el equilibrio del estilo de vida. Fórmula clara, formato práctico, pedido online sencillo." />
+  <meta name="keywords" content="Easy Loss, apoyo al control de peso, gotas naturales, estilo de vida saludable, extractos vegetales" />
+  <meta property="og:title" content="Easy Loss — apoyo para el control de peso" />
+  <meta property="og:description" content="Gotas naturales para apoyar el equilibrio diario. Haz tu pedido online." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#7C3AED" />
+  <link rel="icon" href="111.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Easy Loss",
+    "description": "Gotas naturales para el apoyo diario del control de peso y el equilibrio del estilo de vida.",
+    "image": "777.png",
+    "brand": {
+      "@type": "Brand",
+      "name": "Easy Loss"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg1:#7C3AED;
+      --bg2:#06B6D4;
+      --bg3:#22C55E;
+      --ink:#0b1220;
+      --ink-soft:#20304a;
+      --paper:#ffffff;
+      --glass:rgba(255,255,255,.14);
+      --outline:rgba(255,255,255,.45);
+      --card:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));
+      --btn:#FF6B6B;
+      --btn-2:#FDBA74;
+      --shadow: 0 10px 30px rgba(3, 7, 18, .25);
+      --radius: 18px;
+      --radius-xl: 28px;
+      --gap: clamp(14px, 2.2vw, 28px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.5;
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.15), transparent 60%),
+        radial-gradient(900px 500px at 0% 20%, rgba(255,255,255,.12), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+      min-height:100dvh;
+    }
+
+    /* ---------- Header ---------- */
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.0));
+      border-bottom:1px solid var(--outline);
+    }
+    .wrap{max-width:1200px; margin:0 auto; padding:14px var(--gap);}
+    .nav{display:flex; align-items:center; gap:16px;}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff; font-weight:800; letter-spacing:.3px}
+    .brand .mark{
+      display:grid; place-items:center;
+      height:44px; width:44px; border-radius:10px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow:var(--shadow);
+      font-weight:800;
+    }
+    .spacer{flex:1}
+    .menu{display:flex; gap:10px; flex-wrap:wrap}
+    .menu a{color:#fff; text-decoration:none; padding:10px 14px; border-radius:999px; border:1px solid transparent; transition:.2s}
+    .menu a:hover{background:var(--glass); border-color:var(--outline)}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative; overflow:hidden}
+    .hero .wrap{display:grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items:start; gap:var(--gap); padding-block: clamp(42px, 5vw, 88px)}
+    .hero .wrap > *{min-width:0}
+    .hero-visual{
+      position:relative; min-height:360px; border-radius:var(--radius-xl);
+      background:rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      isolation:isolate;
+      overflow:hidden;
+    }
+    .hero-visual img{
+      width:100%;
+      display:block;
+      height:auto;
+      border-radius:inherit;
+    }
+    .hero-visual:after{
+      content:""; position:absolute; inset:0; border-radius:inherit;
+      background:linear-gradient(135deg, rgba(124,58,237,.12), rgba(6,182,212,.12));
+      mix-blend:multiply;
+      pointer-events:none;
+    }
+    .headline{font-size: clamp(32px, 4.2vw, 56px); line-height:1.05; margin:0 0 8px; letter-spacing:-.02em; font-weight:800}
+    .subhead{font-size: clamp(16px, 1.6vw, 20px); opacity:.95; margin:0 0 22px}
+    .cta{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; background: linear-gradient(90deg, var(--btn), var(--btn-2));
+      color:#111; font-weight:800; text-decoration:none; box-shadow:var(--shadow); border:2px solid rgba(255,255,255,.2)}
+    .cta:hover{transform: translateY(-1px)}
+
+    /* ---------- Cards / Sections ---------- */
+    section{padding-block: clamp(48px, 7vw, 96px)}
+    .grid{display:grid; gap:var(--gap)}
+    .cols-3{grid-template-columns: repeat(3,1fr)}
+    .cols-2{grid-template-columns: repeat(2,1fr)}
+    @media (max-width: 960px){ .hero .wrap{grid-template-columns:1fr} .cols-3{grid-template-columns:1fr} .cols-2{grid-template-columns:1fr} }
+
+    .card{
+      background: var(--card);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .card .pad{padding:22px}
+
+    .chip{display:inline-block; padding:4px 10px; border-radius:999px; font-weight:700; letter-spacing:.3px; background:#111; color:#fff; font-size:12px; border:1px solid var(--outline)}
+
+    .media{aspect-ratio: 16/10; background:#ddd center/contain no-repeat}
+
+    /* pills list */
+    .pills{display:flex; flex-wrap:wrap; gap:8px}
+    .pill{padding:8px 12px; background:rgba(255,255,255,.7); border:1px solid rgba(0,0,0,.07); color:var(--ink-soft); border-radius:10px; font-weight:600}
+
+    /* About block color swap */
+    .swap{background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.06)); border:1px solid var(--outline); border-radius:var(--radius-xl)}
+
+    /* Contact strip */
+    .strip{display:grid; grid-template-columns: repeat(3,1fr); gap:var(--gap)}
+    .strip .cell{background:var(--card); color:var(--ink); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.06)}
+    .cell h5{margin:0 0 6px; font-size:18px}
+    .cell p{margin:0}
+
+    /* Form */
+    form{display:grid; gap:12px}
+    input, textarea, select{font:inherit; padding:14px 16px; border-radius:12px; border:2px solid rgba(255,255,255,.25); background:rgba(255,255,255,.15); color:#fff; outline:none}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.85)}
+    input:focus, textarea:focus, select:focus{border-color:#fff}
+    .form-light input, .form-light textarea, .form-light select{background:#fff; border-color:rgba(0,0,0,.1); color:var(--ink)}
+    .field-hint{font-size:12px; color:rgba(11,18,32,.65); margin-top:-6px}
+    .submit{justify-self:center}
+
+    /* Footer */
+    footer{border-top:1px solid var(--outline); background:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.28));}
+    footer .legal{opacity:.9}
+    footer a{color:#fff}
+
+    /* Accessibility focus */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid #fff; outline-offset:2px}
+
+    /* Modal */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:100;
+      padding:20px;
+    }
+    .modal.is-open{display:flex}
+    .modal-dialog{
+      position:relative;
+      background:#fff;
+      color:var(--ink);
+      border-radius:20px;
+      max-width:520px;
+      width:min(520px, 92vw);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .modal-dialog h3{margin-top:0}
+    .modal-close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      border:1px solid rgba(0,0,0,.1);
+      background:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    /* Visually hidden utility */
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
+</head>
+<body id="top">
+  <!-- ======= HEADER ======= -->
+  <header class="header" id="header">
+    <div class="wrap nav" aria-label="Primary">
+      <a class="brand" href="#top" title="Easy Loss">
+        <span class="mark">EL</span>
+        <span>Easy Loss</span>
+      </a>
+      <div class="spacer"></div>
+      <nav class="menu" aria-label="Sitio">
+        <a href="#overview">Resumen</a>
+        <a href="#ingredients">Ingredientes</a>
+        <a href="#how">Uso</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#order">Pedir</a>
+        <a href="#contacts">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="overview" aria-label="Resumen de Easy Loss">
+    <div class="wrap">
+      <div>
+        <span class="chip">Gotas naturales</span>
+        <h1 class="headline">Easy Loss — apoyo al control de peso en tu rutina diaria</h1>
+        <p class="subhead">
+          Fórmula breve con extractos vegetales y L-carnitina. Formato práctico de gotas
+          para quienes desean complementar hábitos saludables sin restricciones estrictas.
+        </p>
+        <a class="cta" href="#order">Hacer pedido</a>
+      </div>
+      <div class="hero-visual">
+        <img src="111.png" alt="Easy Loss" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= KEY POINTS ======= -->
+  <section id="benefits" aria-labelledby="benefits-title">
+    <div class="wrap">
+      <div class="swap" style="padding:24px; margin-bottom:var(--gap); border-radius:var(--radius-xl)">
+        <h2 id="benefits-title" style="margin:0 0 6px">Por qué Easy Loss es adecuado para el uso diario</h2>
+        <h4 style="margin:0">La fórmula está pensada para apoyar el equilibrio del plan alimentario y un estilo de vida activo.</h4>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="media" style="background-image:url('222.png')" aria-label="Agua y frutas"></div>
+          <div class="pad">
+            <h3>Formato cómodo</h3>
+            <p>Las gotas son fáciles de integrar en tu rutina diaria: añádelas al agua o úsalas según la indicación de la etiqueta.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media" style="background-image:url('333.png')" aria-label="Alimentación equilibrada"></div>
+          <div class="pad">
+            <h3>Enfoque transparente</h3>
+            <p>El contenido y las recomendaciones se describen de forma simple para que sepas qué añades a tu rutina.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media" style="background-image:url('444.png')" aria-label="Estilo de vida activo"></div>
+          <div class="pad">
+            <h3>Apoyo a la actividad</h3>
+            <p>La fórmula está creada como un complemento a la actividad diaria y una alimentación consciente.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= INGREDIENTS ======= -->
+  <section id="ingredients" aria-label="Ingredientes de Easy Loss">
+    <div class="wrap grid cols-2">
+      <div class="card" style="padding:0; overflow:hidden">
+        <div class="media" style="aspect-ratio: 4/5; background-image:url('555.png')" aria-label="Ingredientes vegetales"></div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Ingredientes</span>
+          <h3>Qué contiene Easy Loss</h3>
+          <p>La combinación de componentes está pensada para apoyar un estilo de vida equilibrado.</p>
+          <div class="pills" style="margin-top:14px">
+            <span class="pill">L-carnitina</span>
+            <span class="pill">Bayas de goji</span>
+            <span class="pill">Extracto de té verde</span>
+            <span class="pill">Hibisco</span>
+            <span class="pill">Guaraná</span>
+          </div>
+          <p style="margin-top:16px">
+            Antes de usar, revisa el listado completo en el envase. La fórmula no es un medicamento
+            y está pensada para el apoyo diario.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= HOW TO USE ======= -->
+  <section id="how" aria-label="Cómo usar">
+    <div class="wrap grid cols-2">
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Cómo usar</span>
+          <h2 style="margin:10px 0 8px">Un ritual simple para cada día</h2>
+          <p>1. Agita el frasco antes de usarlo.<br>
+            2. Sigue la dosis indicada en la etiqueta.<br>
+            3. Úsalo de forma regular junto con una buena hidratación y alimentación equilibrada.
+          </p>
+          <p>
+            No excedas la porción recomendada. Guárdalo en un lugar seco, fuera del alcance de los niños.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="padding:0">
+        <div class="media" style="aspect-ratio: 4/4; background-image:url('666.png')" aria-label="Vaso de agua y deporte"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FAQ ======= -->
+  <section id="faq" aria-label="Preguntas frecuentes">
+    <div class="wrap">
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="pad">
+            <h4>¿Para quién es Easy Loss?</h4>
+            <p>La fórmula está pensada para adultos que desean complementar hábitos saludables y actividad en el día a día.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pad">
+            <h4>¿Hay efecto inmediato?</h4>
+            <p>El producto está diseñado para un uso regular. Los resultados dependen de los hábitos y el estilo de vida.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pad">
+            <h4>¿Se puede combinar con la dieta?</h4>
+            <p>Sí, Easy Loss no sustituye la alimentación. Para mejores resultados mantén un plan equilibrado.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ORDER ======= -->
+  <section id="order" aria-label="Pedido Easy Loss">
+    <div class="wrap grid cols-2">
+      <div class="card" style="padding:0">
+        <div class="media" style="aspect-ratio: 3/2; background-image:url('777.png')" aria-label="Foto del producto Easy Loss"></div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Oferta</span>
+          <h3>Pedir Easy Loss</h3>
+          <p>Completa el formulario y nos pondremos en contacto para confirmar el pedido y la entrega.</p>
+
+          <form class="form-light" action="https://forms.nicepagesrv.com/v2/form/process" method="post" source="email" name="order-form" aria-label="Formulario de pedido">
+            <label class="visually-hidden" for="order-name">Nombre</label>
+            <input type="text" id="order-name" name="name" placeholder="Tu nombre" required />
+            <span class="field-hint">Nombre</span>
+
+            <label class="visually-hidden" for="order-surname">Apellido</label>
+            <input type="text" id="order-surname" name="surname" placeholder="Tu apellido" required />
+            <span class="field-hint">Apellido</span>
+
+            <label class="visually-hidden" for="order-email">Email</label>
+            <input type="email" id="order-email" name="email" placeholder="Email de confirmación" />
+            <span class="field-hint">Correo electrónico</span>
+
+            <label class="visually-hidden" for="order-phone">Teléfono</label>
+            <input type="tel" id="order-phone" name="phone" placeholder="Número de teléfono" required />
+            <span class="field-hint">Número de teléfono</span>
+
+            <button class="cta submit" type="submit">Pedir ahora</button>
+            <div class="u-form-send-message" aria-live="polite" style="display:none">¡Gracias! Hemos recibido tu solicitud.</div>
+            <div class="u-form-send-error u-form-send-message" aria-live="assertive" style="display:none">No se pudo enviar el formulario. Revisa los campos y vuelve a intentarlo.</div>
+            <input type="hidden" value="" name="recaptchaResponse" />
+            <input type="hidden" name="formServices" value="52b9a032-2159-adc9-77de-fdc2b94fd95b" />
+          </form>
+
+          <p style="margin-top:18px; font-size:14px; color:var(--ink-soft)">
+            Al hacer clic en «Pedir ahora», confirmas que has leído la
+            <a href="Politica.html">Política de privacidad</a> y los
+            <a href="Términos y condiciones.html">Términos y condiciones</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT STRIP ======= -->
+  <section id="contacts" aria-label="Contactos">
+    <div class="wrap strip">
+      <div class="cell">
+        <h5>Dirección</h5>
+        <p>Pg. de la Alameda, 58, Caminos al Grao, 46023 Valencia, Spain</p>
+      </div>
+      <div class="cell">
+        <h5>Teléfono</h5>
+        <p>+34 074 43 62 70</p>
+      </div>
+       <div class="cell">
+        <h5>Email</h5>
+        <p>contact@cloudybody.site</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= DISCLAIMER ======= -->
+  <section aria-label="Información importante">
+    <div class="wrap">
+      <div class="card">
+        <div class="pad">
+          <h3 style="margin-top:0">Información importante</h3>
+          <p>
+            La información del sitio es de carácter informativo y no constituye una recomendación médica. Easy Loss no es un medicamento.
+            Los resultados pueden variar según las características individuales y el estilo de vida.
+            Si estás embarazada o tienes condiciones crónicas, utiliza el producto con precaución y revisa la composición.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer id="footer">
+    <div class="wrap">
+      <div class="grid cols-2" style="align-items:start">
+        <div>
+          <p class="legal"><strong>2026 ⓒ Easy Loss</strong></p>
+          <nav class="menu" aria-label="Pie de página">
+            <a href="Politica.html">Política de privacidad</a>
+            <a href="Términos y condiciones.html">Términos y condiciones</a>
+            <a href="Contacts.html">Contactos</a>
+          </nav>
+        </div>
+        <div>
+          <div class="legal">
+            <p><strong>Materiales útiles:</strong></p>
+            <ul>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/28826840/" target="_blank" rel="noopener">Alimentación equilibrada y bienestar</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/33209931/" target="_blank" rel="noopener">Personalización de hábitos alimentarios</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/37513229/" target="_blank" rel="noopener">Microbiota y balance metabólico</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="order-success" role="dialog" aria-modal="true" aria-labelledby="order-success-title">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" aria-label="Cerrar">X</button>
+      <h3 id="order-success-title">Gracias</h3>
+      <p>Gracias por su pedido, el gerente se comunicará con usted dentro de 5 minutos para confirmar la información.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const form = document.querySelector('form[name="order-form"]');
+      const modal = document.getElementById('order-success');
+      if (!form || !modal) return;
+
+      const closeBtn = modal.querySelector('.modal-close');
+      const openModal = () => modal.classList.add('is-open');
+      const closeModal = () => modal.classList.remove('is-open');
+
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          return;
+        }
+        event.preventDefault();
+        openModal();
+        form.reset();
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
