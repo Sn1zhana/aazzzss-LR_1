@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sanfte Hautpflege – Natürlich & Alltagstauglich</title>
+  <link rel="icon" type="image/jpeg" href="icnn.jpg">
+  <link rel="shortcut icon" href="icnn.jpg">
+  <meta name="description" content="Ein sanfter, alltagstauglicher Pflegeansatz, der das natürliche Hautbild unterstützt – für einen frischer wirkenden Teint. Kosmetische Pflege, Ergebnisse können variieren." />
+  <style>
+    :root{
+      /* Kühles, modernes Blau-Thema */
+      --bg:#F6F8FC;
+      --bg-soft:#ECF2FF;
+      --primary:#0D3B66;
+      --primary-600:#0B3155;
+      --accent:#6EA8FF;
+      --ink:#1C1F24;
+      --muted:#5B6470;
+      --card:#FFFFFF;
+      --ring:#DFE7FF;
+      --ok:#0EA5E9;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+      background:linear-gradient(180deg,var(--bg) 0%, #FFFFFF 100%);
+      color:var(--ink);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto;display:block}
+    .skip-link{
+      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip-link:focus{
+      position:static;width:auto;height:auto;padding:0.5rem 0.75rem;background:var(--primary);color:#fff;border-radius:8px;display:inline-block;margin:0.5rem;
+    }
+    nav{
+      background:#fff;
+      border-bottom:1px solid #E6ECF5;
+      position:sticky;top:0;z-index:10;
+    }
+    nav ul{
+      margin:0 auto;max-width:1200px;list-style:none;padding:0 16px;display:flex;gap:18px;align-items:center;min-height:56px;flex-wrap:wrap;
+    }
+    nav a{padding:8px 10px;border-radius:10px;font-weight:600;color:var(--primary)}
+    nav a:hover{background:var(--bg-soft)}
+    .nav-logo{font-weight:700}
+    .container{max-width:1100px;margin:0 auto;padding:64px 16px}
+    .text-center{text-align:center}
+    .mb-large{margin-bottom:24px}
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .hero{
+      background:
+        radial-gradient(1200px 400px at 70% -40%, var(--bg-soft) 0%, rgba(110,168,255,0.0) 60%),
+        linear-gradient(180deg,var(--bg) 0%, #FFFFFF 70%);
+      border-bottom:1px solid #E6ECF5;
+    }
+    .hero-content{max-width:1100px;margin:0 auto;padding:72px 16px 56px}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:0 0 12px}
+    .hero strong{color:var(--primary)}
+    .hero-subtitle{color:var(--muted);font-size:clamp(16px,2.3vw,18px);max-width:820px;margin:0 0 18px}
+    .hero-media{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .media-img{
+      border-radius:18px;overflow:hidden;border:1px solid #E6ECF5;
+      box-shadow:0 10px 30px rgba(13,59,102,.10);
+    }
+    .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .thumb{
+      border-radius:12px;overflow:hidden;border:1px solid #E6ECF5;background:#fff
+    }
+    .btn{
+      display:inline-block;background:var(--primary);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid var(--primary-600);box-shadow:0 8px 18px rgba(13,59,102,0.15);
+    }
+    .btn:hover{background:var(--primary-600)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{
+      background:var(--card);border:1px solid #E6ECF5;border-radius:16px;padding:18px;
+      box-shadow:0 4px 14px rgba(13,59,102,0.06);
+    }
+    .card h3{margin:10px 0 6px}
+    .card-icon{font-size:22px}
+    .benefits-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .benefit-item{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid #E6ECF5;border-radius:16px;padding:14px}
+    .benefit-icon{font-size:20px}
+    .benefit-text h4{margin:4px 0 4px}
+    .benefit-text p{margin:0;color:var(--muted)}
+    .ingredient{background:#fff;border:1px solid #E6ECF5;border-radius:16px;padding:16px;margin-bottom:12px}
+    .faq-item{border:1px solid #E6ECF5;border-radius:14px;padding:14px;margin-bottom:12px;background:#fff}
+    .faq-question{font-weight:700}
+    .faq-answer{color:var(--muted);margin-top:4px}
+    .contact-form{display:grid;grid-template-columns:1fr;gap:12px}
+    .form-group label{display:block;font-weight:600;margin-bottom:6px}
+    input[type="text"],input[type="email"],input[type="tel"],textarea{
+      width:100%;padding:12px;border:1px solid #D8E1F2;border-radius:12px;background:#fff;
+      outline:none;transition:border .15s, box-shadow .15s;
+    }
+    textarea{min-height:120px;resize:vertical}
+    input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+    .form-message{margin-top:10px;font-weight:600;display:none}
+    .form-message.ok{color:var(--ok);display:block}
+    .form-message.err{color:#B91C1C;display:block}
+    .form-note{font-size:0.9rem;color:var(--muted);margin:0}
+    .consent{
+      display:flex;gap:10px;align-items:flex-start;font-size:0.9rem;color:var(--muted);
+    }
+    .consent input{margin-top:4px}
+    .cta{background:linear-gradient(135deg,var(--primary) 0%, var(--primary-600) 100%);color:#fff;text-align:center}
+    .cta a.btn{background:#fff;color:var(--primary);border-color:#fff}
+    .cta a.btn:hover{opacity:.95}
+    footer{padding:28px 16px;border-top:1px solid #E6ECF5;color:var(--muted);text-align:center;background:#fff}
+    .section-soft{background:var(--bg-soft)}
+    /* Utility: Seiten-Header */
+    .page-head{margin-bottom:8px}
+    .page-desc{color:var(--muted);margin-top:0}
+    .ad-label{
+      text-align:center;
+      font-weight:700;
+      font-size:14px;
+      margin:10px 0 6px;
+      color:#000;
+      letter-spacing:0.5px;
+    }
+    .offer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      align-items:start;
+    }
+    .offer-card{
+      background:var(--card);
+      border:1px solid #E6ECF5;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(13,59,102,0.08);
+    }
+    .offer-image{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid #E6ECF5;
+      background:#F8FAFF;
+      margin-bottom:14px;
+    }
+    .offer-points{margin:12px 0 0;padding-left:1.1rem;color:var(--muted)}
+    .offer-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .offer-tag{
+      background:var(--bg-soft);
+      color:var(--primary);
+      border-radius:999px;
+      padding:6px 10px;
+      font-weight:600;
+      font-size:0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-label">Werbung</div>
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <nav role="navigation" aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="#home" class="nav-logo" aria-label="Zur Startseite">Sanfte&nbsp;Haut</a></li>
+      <li><a href="#cosa">Überblick</a></li>
+      <li><a href="#come">Wie es unterstützt</a></li>
+      <li><a href="#benefici">Vorteile</a></li>
+      <li><a href="#ingredienti">Inhaltsstoffe</a></li>
+      <li><a href="#uso">Anwendung</a></li>
+      <li><a href="#testimonianze">Erfahrungen</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#offer">Simpla&nbsp;360</a></li>
+      <!-- Окрема сторінка Contacts -->
+      <li><a href="contacts.html">Kontakte</a></li>
+      <!-- Окрема сторінка Privacy Policy -->
+      <li><a href="privacy.html">Datenschutzrichtlinie</a></li>
+      <!-- Окрема сторінка Health & Finance Disclaimer -->
+      <li><a href="disclaimer.html">Haftungsausschluss für Gesundheit und Finanzen</a></li>
+      <li><a href="#impressum">Impressum</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-media">
+          <div>
+            <h1>Sanfte <strong>Hautpflege</strong> für ein frischeres Erscheinungsbild</h1>
+            <p class="hero-subtitle">
+              Ein alltagstauglicher Pflegeansatz zur Unterstützung eines gepflegt und glatt wirkenden Teints – ohne überzogene Versprechen. Kosmetische Pflege, individuelle Ergebnisse können variieren.
+            </p>
+            <a href="#cosa" class="btn" aria-label="Mehr erfahren über den Pflegeansatz">Mehr erfahren</a>
+          </div>
+
+          <!-- Hero Bild -->
+          <figure class="media-img" aria-label="Symbolische Hautpflege-Darstellung">
+            <img alt="Sanfte Hautpflege – symbolisches Motiv"
+                 src="eec7f94a864ed4141f70a67403a6bfc7.jpg"/>
+            <div class="thumbs" aria-hidden="true">
+              <!-- optionale kleine Bilder / Thumbnails -->
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Überblick -->
+    <section id="cosa">
+      <div class="container">
+        <h2 class="text-center mb-large">Worum es geht – und warum es zählt</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto;">
+          Ein ruhiger, klarer Pflegealltag hilft der Haut, sich ausgeglichen und frisch anzufühlen. Der Fokus liegt auf Feuchtigkeit, Schutz und einer Routine, die sich leicht in den österreichischen Alltag integrieren lässt.
+        </p>
+        <p class="text-center" style="max-width: 800px; margin: 2rem auto 0;">
+          Statt starker Versprechen steht eine verlässliche Pflegeroutine im Mittelpunkt: sanfte Schritte, transparente Hinweise und eine Formulierung, die das natürliche Erscheinungsbild der Haut unterstützt.
+        </p>
+      </div>
+    </section>
+
+    <!-- Wie es unterstützt -->
+    <section id="come" class="section-soft">
+      <div class="container">
+        <h2 class="text-center mb-large">Wie die Pflege unterstützt</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">💧</div>
+            <h3>Feuchtigkeit im Alltag</h3>
+            <p>Feuchtigkeitsbindende Inhaltsstoffe unterstützen ein gepflegt wirkendes Hautbild.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>Glattere Optik</h3>
+            <p>Pflegekomponenten können die Haut ebenmäßiger und ruhiger wirken lassen.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌤️</div>
+            <h3>Schutz im Alltag</h3>
+            <p>Antioxidative Begleiter unterstützen die Haut im Umgang mit Umwelteinflüssen.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🧖‍♀️</div>
+            <h3>Einfach integrierbar</h3>
+            <p>Klare Schritte, die sich morgens und abends unkompliziert anwenden lassen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section id="benefici">
+      <div class="container">
+        <h2 class="text-center mb-large">Vorteile der sanften Routine</h2>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">🌟</div>
+            <div class="benefit-text">
+              <h4>Frischer wirkender Teint</h4>
+              <p>Unterstützt ein gepflegt und lebendig wirkendes Hautbild.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🧴</div>
+            <div class="benefit-text">
+              <h4>Geschmeidigere Optik</h4>
+              <p>Kann die Haut weicher erscheinen lassen – bei regelmäßiger Pflege.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💦</div>
+            <div class="benefit-text">
+              <h4>Angenehme Feuchtigkeit</h4>
+              <p>Schenkt ein ausgeglichenes, angenehm durchfeuchtetes Hautgefühl.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🍃</div>
+            <div class="benefit-text">
+              <h4>Alltagstauglich</h4>
+              <p>Einfach integrierbare Schritte für morgens und abends.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🛡️</div>
+            <div class="benefit-text">
+              <h4>Antioxidative Pflege</h4>
+              <p>Unterstützt die Haut beim Umgang mit Umweltbelastungen.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🕊️</div>
+            <div class="benefit-text">
+              <h4>Transparenter Ansatz</h4>
+              <p>Ohne Heilversprechen – Ergebnisse können variieren.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inhaltsstoffe -->
+    <section id="ingredienti" class="section-soft">
+      <div class="container">
+        <h2 class="text-center mb-large">Ausgewählte Inhaltsstoffe</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">
+          Zusammenstellung für eine gepflegt und frisch wirkende Haut. Die folgenden Pflegebegleiter sind bekannt für ein angenehmes Hautgefühl.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <img alt="Hyaluronsäure – stilisierte Illustration" src="hyaluronsaeure-serum.jpg">
+            <h4 style="margin:12px 0 6px;">💧 Hyaluronsäure</h4>
+            <p>Hilft, Feuchtigkeit zu binden – für ein praller wirkendes Hautbild.</p>
+          </div>
+
+          <div class="card">
+            <img alt="Vitamin C – stilisierte Illustration" src="zitrusfruechte134.webp">
+            <h4 style="margin:12px 0 6px;">🌞 Vitamin&nbsp;C</h4>
+            <p>Antioxidativ – unterstützt ein ebenmäßiger wirkendes Hautbild.</p>
+          </div>
+
+          <div class="card">
+            <img alt="Peptide – stilisierte Illustration" src="Glucagon-like-peptide-min.jpg">
+            <h4 style="margin:12px 0 6px;">🧪 Peptide</h4>
+            <p>Können die Haut gepflegt und glatt erscheinen lassen.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 1.5rem;">
+          <!-- Grüntee-Extrakt -->
+          <div class="card">
+            <img alt="Grüntee-Extrakt – stilisierte Illustration" src="bfc63aea45db8db02ab0c222c23e7acb.jpg">
+            <h4 style="margin:12px 0 6px;">🌿 Grüntee-Extrakt</h4>
+            <p>Bekannt für antioxidative Eigenschaften – pflegt die Haut im Alltag.</p>
+          </div>
+
+          <!-- Niacinamid -->
+          <div class="card">
+            <img alt="Niacinamid – stilisierte Illustration" src="A_modern_skincare_lab_close-up_of_a_niacinamid_e62756e7-dcd4-40c9-8e9b-1b3fdc18f7d1_1-1024x771.jpg">
+            <h4 style="margin:12px 0 6px;">🌼 Niacinamid</h4>
+            <p>Kann das Hautbild ebenmäßiger erscheinen lassen und das Erscheinungsbild von Poren verfeinern.</p>
+          </div>
+
+          <!-- Ceramide -->
+          <div class="card">
+            <img alt="Ceramide – stilisierte Illustration" src="what-are-ceramides.jpg">
+            <h4 style="margin:12px 0 6px;">🥣 Ceramide</h4>
+            <p>Unterstützen ein ausgeglichenes, geschmeidiges Hautgefühl.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anwendung -->
+    <section id="uso">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="text-center mb-large">Anwendung – einfach & angenehm</h2>
+        <div class="card">
+          <h3>So integrierst du die Routine</h3>
+          <p>Für eine gepflegt und frisch wirkende Haut empfiehlt sich eine konsistente, sanfte Pflege:</p>
+          <ul style="margin-left: 1.25rem; color: var(--muted);">
+            <li style="margin-bottom: 0.75rem;"><strong>Morgens:</strong> Sanfte Reinigung, Vitamin&nbsp;C/Antioxidantien, Feuchtigkeitspflege, geeigneter UV-Schutz.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Abends:</strong> Milde Reinigung, Feuchtigkeits-Booster (z.&nbsp;B. Hyaluron), reichhaltigere Pflege.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Kontinuität:</strong> Sichtbare Pflegeeffekte benötigen Zeit und Regelmäßigkeit. Ergebnisse können variieren.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Sanft bleiben:</strong> Auf die Haut hören und nicht überpflegen.</li>
+            <li><strong>Lebensstil:</strong> Ausgewogene Ernährung, ausreichend Wasser und Schlaf unterstützen das Hautbild zusätzlich.</li>
+          </ul>
+          <div class="card" style="margin-top: 1rem; background:#FAFCFF;">
+            <p style="font-size: 0.95rem; margin:0;">
+              <strong>Hinweis:</strong> Diese Hinweise ersetzen keine medizinische Beratung und beziehen sich auf kosmetische Pflege. Bei speziellen Hautthemen bitte eine Fachperson konsultieren.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Erfahrungen -->
+    <section id="testimonianze">
+      <div class="container">
+        <h2 class="text-center mb-large">Erfahrungen aus dem Alltag</h2>
+        <div class="cards">
+          <div class="card">
+            <p>„Fühlt sich leicht an und lässt meine Haut morgens frischer wirken.“</p>
+            <p style="color:var(--muted);margin:6px 0 0;">– A., Wien</p>
+          </div>
+          <div class="card">
+            <p>„Mag die klaren Schritte – unkompliziert und angenehm in der Anwendung.“</p>
+            <p style="color:var(--muted);margin:6px 0 0;">– L., Graz</p>
+          </div>
+          <div class="card">
+            <p>„Nach einigen Wochen wirkt mein Teint ruhiger und gleichmäßiger.“</p>
+            <p style="color:var(--muted);margin:6px 0 0;">– M., Linz</p>
+          </div>
+        </div>
+        <p class="text-center" style="color:var(--muted);margin-top:12px;">Einzelne Erfahrungen; Ergebnisse sind individuell und können variieren.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container" style="max-width: 900px;">
+        <h2 class="text-center mb-large">FAQ</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Ist die Routine für den täglichen Gebrauch gedacht?</div>
+          <div class="faq-answer">Ja, sie ist für den Alltag ausgelegt. Bei sensibler Haut langsam starten und auf die Hautreaktion achten.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Wann sind erste Veränderungen sichtbar?</div>
+          <div class="faq-answer">Pflege benötigt Zeit. Manche bemerken innerhalb weniger Wochen ein frischer wirkendes Hautbild. Ergebnisse können variieren.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Kann ich andere Produkte kombinieren?</div>
+          <div class="faq-answer">Meistens ja. Bei Unsicherheit (z.&nbsp;B. Säuren/Retinoide) bitte vorab fachlichen Rat einholen.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Für welche Hauttypen eignet sich die Pflege?</div>
+          <div class="faq-answer">Die Routine ist für verschiedene Hauttypen gedacht. Bei besonderen Bedürfnissen bitte individuell beraten lassen.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Handelt es sich um ein Medizinprodukt?</div>
+          <div class="faq-answer">Nein. Es geht um kosmetische Pflege zur Unterstützung eines gepflegten Erscheinungsbilds. Keine Heilversprechen.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container" style="max-width: 720px;">
+        <h2 style="color:#fff;">Pflege, die in den Alltag passt</h2>
+        <p style="opacity:.9;font-size:1.1rem">Ein klarer, angenehmer Weg zu einem gepflegt wirkenden Teint – Schritt für Schritt.</p>
+        <a href="#offer" class="btn" style="margin-top: 10px;">Mehr zu Simpla&nbsp;360</a>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section id="offer" class="section-soft">
+      <div class="container">
+        <h2 class="text-center mb-large">Das Angebot: Simpla&nbsp;360</h2>
+        <p class="text-center" style="max-width: 780px; margin: 0 auto 2rem;">
+          Simpla&nbsp;360 ist ein kosmetisches Pflegeprodukt, das sich in eine ruhige, klare Routine integrieren lässt. Der Fokus liegt auf Feuchtigkeit, Schutz und einer angenehmen Anwendung – ohne überzogene Versprechen.
+        </p>
+
+        <div class="offer-grid">
+          <div class="offer-card">
+            <div class="offer-image">
+              <img src="111.png" alt="Produktfoto Simpla 360 (Symbolbild)">
+            </div>
+            <h3>Wofür Simpla&nbsp;360 steht</h3>
+            <p>Ein sanfter Pflegebegleiter für den Alltag – entwickelt für ein gepflegt und frisch wirkendes Hautbild.</p>
+            <ul class="offer-points">
+              <li>Leichte, alltagstaugliche Anwendung</li>
+              <li>Unterstützt ein ebenmäßiger wirkendes Erscheinungsbild</li>
+              <li>Transparente Hinweise, keine Heilversprechen</li>
+            </ul>
+            <div class="offer-meta">
+              <span class="offer-tag">Für den Alltag</span>
+              <span class="offer-tag">Lieferung AT/DE/CH</span>
+              <span class="offer-tag">Kein Abo</span>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <h3>Unverbindlich informieren</h3>
+            <form id="offerForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="offer-name">Vor- und Nachname</label>
+                <input id="offer-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="offer-phone">Telefon</label>
+                <input id="offer-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="form-group">
+                <label for="offer-email">E-Mail</label>
+                <input id="offer-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="offer-message">Ihre Frage (optional)</label>
+                <textarea id="offer-message" name="message" placeholder="Optional: Lieferzeit, Anwendung, Routine ..."></textarea>
+              </div>
+              <label class="consent">
+                <input id="offer-consent" name="consent" type="checkbox" required>
+                <span>Ich habe die <a href="privacy.html">Datenschutzrichtlinie</a> gelesen und stimme der Kontaktaufnahme zu.</span>
+              </label>
+              <button class="btn" type="submit">Info anfordern</button>
+              <div id="offerMessage" class="form-message" role="status" aria-live="polite"></div>
+            </form>
+            <p class="form-note" style="margin-top:10px;">Hinweis: Dieses Formular ist eine Demo. Es speichert keine Daten.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1.5rem;background:#FAFCFF;">
+          <h3>Transparente Hinweise</h3>
+          <p style="margin:0">
+            Kosmetische Pflege, kein Ersatz für medizinische Behandlungen. Keine Aussagen zu Diagnose, Behandlung, Heilung oder Prävention.
+            Erfahrungen sind individuell; Ergebnisse können variieren.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:20px 16px;">
+      <div id="impressum" style="max-width: 900px; margin: 0 auto 16px; text-align:left;">
+        <h2 class="page-head">Impressum</h2>
+        <p class="page-desc">Angaben gemäß § 5 ECG und § 14 UGB.</p>
+
+        <h3>Dienstanbieter</h3>
+        <p>
+          Schönharmonie Kosmetik GmbH<br>
+          Mariahilfer Straße 112/3<br>
+          1060 Wien<br>
+          Österreich
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>
+          Telefon: +43 1 997 45 32<br>
+          E-Mail: support@schoenharmonie-kosmetik.at
+        </p>
+
+        <h3>Unternehmensdaten</h3>
+        <p>
+          Firmenbuchnummer: FN 582734 g<br>
+          Firmenbuchgericht: Handelsgericht Wien<br>
+          UID-Nummer: ATU78965432<br>
+          Unternehmensgegenstand: Handel mit kosmetischen Produkten
+        </p>
+
+        <h3>Verantwortlich für den Inhalt</h3>
+        <p>Schönharmonie Kosmetik GmbH</p>
+
+        <div class="card" style="margin-top:12px;">
+          <p style="margin:0">
+            <strong>Hinweis:</strong> Diese Seite richtet sich an Nutzer in der DACH-Region und stellt allgemeine Informationen zu kosmetischer Pflege bereit.
+            Sie ersetzt keine individuelle medizinische Beratung oder Finanzberatung.
+          </p>
+        </div>
+      </div>
+
+      <small>© 2025 Schönharmonie Kosmetik GmbH. Alle Rechte vorbehalten.</small>
+      <div style="margin-top:8px;">
+        <a href="privacy.html">Datenschutzrichtlinie</a> ·
+        <a href="disclaimer.html">Haftungsausschluss für Gesundheit und Finanzen</a> ·
+        <a href="contacts.html">Kontakte</a> ·
+        <a href="#impressum">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll für interne Navigation (nur Links mit #)
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(anchor => {
+        anchor.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(!href || href === '#') return;
+          const target = document.querySelector(href);
+          if(target){
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+    })();
+
+    // Demo-Submit für das Angebotsformular
+    (function(){
+      const form = document.getElementById('offerForm');
+      const msg  = document.getElementById('offerMessage');
+      if(!form || !msg) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = (document.getElementById('offer-name')||{}).value || '';
+        const email = (document.getElementById('offer-email')||{}).value || '';
+        const phone = (document.getElementById('offer-phone')||{}).value || '';
+        const consent = (document.getElementById('offer-consent')||{}).checked;
+        if(!name.trim() || !email.trim() || !phone.trim() || !consent){
+          msg.className = 'form-message err';
+          msg.textContent = 'Bitte fülle alle Pflichtfelder aus und bestätige die Einwilligung.';
+          return;
+        }
+        msg.className = 'form-message ok';
+        msg.textContent = 'Danke! Deine Anfrage wurde gespeichert (Demo).';
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
