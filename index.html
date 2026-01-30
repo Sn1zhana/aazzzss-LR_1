@@ -167,6 +167,41 @@
     /* Accessibility focus */
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid #fff; outline-offset:2px}
 
+    /* Modal */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:100;
+      padding:20px;
+    }
+    .modal.is-open{display:flex}
+    .modal-dialog{
+      position:relative;
+      background:#fff;
+      color:var(--ink);
+      border-radius:20px;
+      max-width:520px;
+      width:min(520px, 92vw);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .modal-dialog h3{margin-top:0}
+    .modal-close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      border:1px solid rgba(0,0,0,.1);
+      background:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
     /* Visually hidden utility */
     .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
   </style>
@@ -425,5 +460,46 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal" id="order-success" role="dialog" aria-modal="true" aria-labelledby="order-success-title">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" aria-label="Cerrar">X</button>
+      <h3 id="order-success-title">Gracias</h3>
+      <p>Gracias por su pedido, el gerente se comunicará con usted dentro de 5 minutos para confirmar la información.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const form = document.querySelector('form[name="order-form"]');
+      const modal = document.getElementById('order-success');
+      if (!form || !modal) return;
+
+      const closeBtn = modal.querySelector('.modal-close');
+      const openModal = () => modal.classList.add('is-open');
+      const closeModal = () => modal.classList.remove('is-open');
+
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          return;
+        }
+        event.preventDefault();
+        openModal();
+        form.reset();
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
