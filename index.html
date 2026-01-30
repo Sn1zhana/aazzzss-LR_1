@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Easy Loss — підтримка контролю ваги</title>
+  <meta name="description" content="Easy Loss — натуральні краплі для щоденної підтримки контролю ваги та балансу способу життя. Прозорий склад, зручний формат, просте замовлення онлайн." />
+  <meta name="keywords" content="Easy Loss, підтримка контролю ваги, натуральні краплі, здоровий спосіб життя, рослинні екстракти" />
+  <meta property="og:title" content="Easy Loss — підтримка контролю ваги" />
+  <meta property="og:description" content="Натуральні краплі для підтримки балансу та щоденних звичок. Оформіть замовлення онлайн." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#7C3AED" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo.min.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Easy Loss",
+    "description": "Натуральні краплі для щоденної підтримки контролю ваги та балансу способу життя.",
+    "image": "https://egodziecka.pl/wp-content/uploads/2024/04/Easyloss.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Easy Loss"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg1:#7C3AED;
+      --bg2:#06B6D4;
+      --bg3:#22C55E;
+      --ink:#0b1220;
+      --ink-soft:#20304a;
+      --paper:#ffffff;
+      --glass:rgba(255,255,255,.14);
+      --outline:rgba(255,255,255,.45);
+      --card:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));
+      --btn:#FF6B6B;
+      --btn-2:#FDBA74;
+      --shadow: 0 10px 30px rgba(3, 7, 18, .25);
+      --radius: 18px;
+      --radius-xl: 28px;
+      --gap: clamp(14px, 2.2vw, 28px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.5;
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.15), transparent 60%),
+        radial-gradient(900px 500px at 0% 20%, rgba(255,255,255,.12), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+      min-height:100dvh;
+    }
+
+    /* ---------- Header ---------- */
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.0));
+      border-bottom:1px solid var(--outline);
+    }
+    .wrap{max-width:1200px; margin:0 auto; padding:14px var(--gap);}
+    .nav{display:flex; align-items:center; gap:16px;}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff; font-weight:800; letter-spacing:.3px}
+    .brand .mark{
+      display:grid; place-items:center;
+      height:44px; width:44px; border-radius:10px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow:var(--shadow);
+      font-weight:800;
+    }
+    .spacer{flex:1}
+    .menu{display:flex; gap:10px; flex-wrap:wrap}
+    .menu a{color:#fff; text-decoration:none; padding:10px 14px; border-radius:999px; border:1px solid transparent; transition:.2s}
+    .menu a:hover{background:var(--glass); border-color:var(--outline)}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative; overflow:hidden}
+    .hero .wrap{display:grid; grid-template-columns: 1.1fr .9fr; align-items:center; gap:var(--gap); padding-block: clamp(42px, 5vw, 88px)}
+    .hero-visual{
+      position:relative; min-height:360px; border-radius:var(--radius-xl);
+      background: url('https://egodziecka.pl/wp-content/uploads/2024/04/Easyloss.jpg') center/cover no-repeat;
+      box-shadow: var(--shadow);
+      isolation:isolate;
+    }
+    .hero-visual:after{
+      content:""; position:absolute; inset:0; border-radius:inherit;
+      background:linear-gradient(135deg, rgba(124,58,237,.35), rgba(6,182,212,.35));
+      mix-blend:multiply;
+    }
+    .headline{font-size: clamp(32px, 4.2vw, 56px); line-height:1.05; margin:0 0 8px; letter-spacing:-.02em; font-weight:800}
+    .subhead{font-size: clamp(16px, 1.6vw, 20px); opacity:.95; margin:0 0 22px}
+    .cta{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; background: linear-gradient(90deg, var(--btn), var(--btn-2));
+      color:#111; font-weight:800; text-decoration:none; box-shadow:var(--shadow); border:2px solid rgba(255,255,255,.2)}
+    .cta:hover{transform: translateY(-1px)}
+
+    /* ---------- Cards / Sections ---------- */
+    section{padding-block: clamp(48px, 7vw, 96px)}
+    .grid{display:grid; gap:var(--gap)}
+    .cols-3{grid-template-columns: repeat(3,1fr)}
+    .cols-2{grid-template-columns: repeat(2,1fr)}
+    @media (max-width: 960px){ .hero .wrap{grid-template-columns:1fr} .cols-3{grid-template-columns:1fr} .cols-2{grid-template-columns:1fr} }
+
+    .card{
+      background: var(--card);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .card .pad{padding:22px}
+
+    .chip{display:inline-block; padding:4px 10px; border-radius:999px; font-weight:700; letter-spacing:.3px; background:#111; color:#fff; font-size:12px; border:1px solid var(--outline)}
+
+    .media{aspect-ratio: 16/10; background:#ddd center/cover no-repeat}
+
+    /* pills list */
+    .pills{display:flex; flex-wrap:wrap; gap:8px}
+    .pill{padding:8px 12px; background:rgba(255,255,255,.7); border:1px solid rgba(0,0,0,.07); color:var(--ink-soft); border-radius:10px; font-weight:600}
+
+    /* About block color swap */
+    .swap{background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.06)); border:1px solid var(--outline); border-radius:var(--radius-xl)}
+
+    /* Contact strip */
+    .strip{display:grid; grid-template-columns: repeat(3,1fr); gap:var(--gap)}
+    .strip .cell{background:var(--card); color:var(--ink); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.06)}
+    .cell h5{margin:0 0 6px; font-size:18px}
+    .cell p{margin:0}
+
+    /* Form */
+    form{display:grid; gap:12px}
+    input, textarea, select{font:inherit; padding:14px 16px; border-radius:12px; border:2px solid rgba(255,255,255,.25); background:rgba(255,255,255,.15); color:#fff; outline:none}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.85)}
+    input:focus, textarea:focus, select:focus{border-color:#fff}
+    .form-light input, .form-light textarea, .form-light select{background:#fff; border-color:rgba(0,0,0,.1); color:var(--ink)}
+    .submit{justify-self:center}
+
+    /* Footer */
+    footer{border-top:1px solid var(--outline); background:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.28));}
+    footer .legal{opacity:.9}
+    footer a{color:#fff}
+
+    /* Accessibility focus */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid #fff; outline-offset:2px}
+
+    /* Visually hidden utility */
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
+</head>
+<body id="top">
+  <!-- ======= HEADER ======= -->
+  <header class="header" id="header">
+    <div class="wrap nav" aria-label="Primary">
+      <a class="brand" href="#top" title="Easy Loss">
+        <span class="mark">EL</span>
+        <span>Easy Loss</span>
+      </a>
+      <div class="spacer"></div>
+      <nav class="menu" aria-label="Site">
+        <a href="#overview">Огляд</a>
+        <a href="#ingredients">Склад</a>
+        <a href="#how">Як використовувати</a>
+        <a href="#faq">Запитання</a>
+        <a href="#order">Замовити</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="overview" aria-label="Огляд Easy Loss">
+    <div class="wrap">
+      <div>
+        <span class="chip">Натуральні краплі</span>
+        <h1 class="headline">Easy Loss — підтримка контролю ваги у щоденному ритмі</h1>
+        <p class="subhead">
+          Лаконічна формула з рослинними екстрактами та L-карнітином. Зручний формат крапель
+          для тих, хто хоче м'яко доповнити здорові звички без жорстких обмежень.
+        </p>
+        <a class="cta" href="#order">Оформити замовлення</a>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Пляшка Easy Loss"></div>
+    </div>
+  </section>
+
+  <!-- ======= KEY POINTS ======= -->
+  <section id="benefits" aria-labelledby="benefits-title">
+    <div class="wrap">
+      <div class="swap" style="padding:24px; margin-bottom:var(--gap); border-radius:var(--radius-xl)">
+        <h2 id="benefits-title" style="margin:0 0 6px">Чому Easy Loss підходить для щоденного використання</h2>
+        <h4 style="margin:0">Формула створена для підтримки балансу раціону та активного стилю життя.</h4>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1887&auto=format&fit=crop')" aria-label="Вода та фрукти"></div>
+          <div class="pad">
+            <h3>Зручний формат</h3>
+            <p>Краплі легко інтегрувати у щоденну рутину: додайте їх у воду або приймайте згідно з інструкцією на етикетці.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1887&auto=format&fit=crop')" aria-label="Збалансоване харчування"></div>
+          <div class="pad">
+            <h3>Прозорий підхід</h3>
+            <p>Склад та рекомендації описані просто й зрозуміло, щоб ви знали, що саме додаєте до свого режиму.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1887&auto=format&fit=crop')" aria-label="Активний спосіб життя"></div>
+          <div class="pad">
+            <h3>Підтримка активності</h3>
+            <p>Формула створена як доповнення до щоденної активності та усвідомленого харчування.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= INGREDIENTS ======= -->
+  <section id="ingredients" aria-label="Склад Easy Loss">
+    <div class="wrap grid cols-2">
+      <div class="card" style="padding:0; overflow:hidden">
+        <div class="media" style="aspect-ratio: 4/5; background-image:url('https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1780&auto=format&fit=crop')" aria-label="Рослинні інгредієнти"></div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Склад</span>
+          <h3>Що всередині Easy Loss</h3>
+          <p>Комбінація компонентів підібрана для підтримки збалансованого способу життя.</p>
+          <div class="pills" style="margin-top:14px">
+            <span class="pill">L-карнітин</span>
+            <span class="pill">Ягоди годжі</span>
+            <span class="pill">Екстракт зеленого чаю</span>
+            <span class="pill">Гібіскус</span>
+            <span class="pill">Гуарана</span>
+          </div>
+          <p style="margin-top:16px">
+            Перед використанням ознайомтесь з повним складом на упаковці. Формула не є лікарським засобом
+            і призначена для щоденної підтримки.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= HOW TO USE ======= -->
+  <section id="how" aria-label="Як використовувати">
+    <div class="wrap grid cols-2">
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Як використовувати</span>
+          <h2 style="margin:10px 0 8px">Простий ритуал на кожен день</h2>
+          <p>1. Збовтайте флакон перед використанням.<br>
+            2. Дотримуйтесь дозування, зазначеного на етикетці.<br>
+            3. Приймайте регулярно, поєднуючи з питним режимом та збалансованим харчуванням.
+          </p>
+          <p>
+            Не перевищуйте рекомендовану порцію. Зберігайте у сухому місці, недоступному для дітей.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="padding:0">
+        <div class="media" style="aspect-ratio: 4/4; background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1887&auto=format&fit=crop')" aria-label="Склянка води та спорт"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FAQ ======= -->
+  <section id="faq" aria-label="Часті запитання">
+    <div class="wrap">
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="pad">
+            <h4>Кому підходить Easy Loss?</h4>
+            <p>Формула розрахована на дорослих, які хочуть доповнити здорові звички та активність у щоденному режимі.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pad">
+            <h4>Чи є миттєвий ефект?</h4>
+            <p>Продукт створений для регулярного використання. Результати залежать від індивідуальних звичок та способу життя.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pad">
+            <h4>Чи можна поєднувати з раціоном?</h4>
+            <p>Так, Easy Loss не замінює харчування. Для найкращого ефекту дотримуйтесь збалансованого раціону.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ORDER ======= -->
+  <section id="order" aria-label="Замовлення Easy Loss">
+    <div class="wrap grid cols-2">
+      <div class="card" style="padding:0">
+        <div class="media" style="aspect-ratio: 3/2; background-image:url('https://egodziecka.pl/wp-content/uploads/2024/04/Easyloss.jpg')" aria-label="Easy Loss фото офферу"></div>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <span class="chip">Офер</span>
+          <h3>Замовити Easy Loss</h3>
+          <p>Заповніть форму нижче, і ми зв'яжемося з вами для підтвердження замовлення та доставки.</p>
+
+          <form class="form-light" action="https://forms.nicepagesrv.com/v2/form/process" method="post" source="email" name="order-form" aria-label="Order form">
+            <label class="visually-hidden" for="order-name">Ім'я</label>
+            <input type="text" id="order-name" name="name" placeholder="Ваше ім'я" required />
+
+            <label class="visually-hidden" for="order-phone">Телефон</label>
+            <input type="tel" id="order-phone" name="phone" placeholder="Номер телефону" required />
+
+            <label class="visually-hidden" for="order-email">Email</label>
+            <input type="email" id="order-email" name="email" placeholder="Email для підтвердження" />
+
+            <label class="visually-hidden" for="order-city">Місто доставки</label>
+            <input type="text" id="order-city" name="city" placeholder="Місто доставки" />
+
+            <button class="cta submit" type="submit">Замовити зараз</button>
+            <div class="u-form-send-message" aria-live="polite" style="display:none">Дякуємо! Ми отримали вашу заявку.</div>
+            <div class="u-form-send-error u-form-send-message" aria-live="assertive" style="display:none">Не вдалося відправити форму. Перевірте поля та спробуйте ще раз.</div>
+            <input type="hidden" value="" name="recaptchaResponse" />
+            <input type="hidden" name="formServices" value="52b9a032-2159-adc9-77de-fdc2b94fd95b" />
+          </form>
+
+          <p style="margin-top:18px; font-size:14px; color:var(--ink-soft)">
+            Натискаючи «Замовити зараз», ви підтверджуєте, що ознайомились із
+            <a href="Politica.html">Політикою конфіденційності</a> та
+            <a href="Términos y condiciones.html">Умовами використання</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT STRIP ======= -->
+  <section id="contacts" aria-label="Контакти">
+    <div class="wrap strip">
+      <div class="cell">
+        <h5>Адреса</h5>
+        <p>Pg. de la Alameda, 58, Caminos al Grao, 46023 Valencia, Spain</p>
+      </div>
+      <div class="cell">
+        <h5>Телефон</h5>
+        <p>+34 074 43 62 70</p>
+      </div>
+       <div class="cell">
+        <h5>Email</h5>
+        <p>contact@cloudybody.site</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= DISCLAIMER ======= -->
+  <section aria-label="Важлива інформація">
+    <div class="wrap">
+      <div class="card">
+        <div class="pad">
+          <h3 style="margin-top:0">Важлива інформація</h3>
+          <p>
+            Інформація на сайті має ознайомчий характер і не є медичною рекомендацією. Easy Loss не є лікарським засобом.
+            Результати можуть відрізнятися залежно від індивідуальних особливостей та способу життя.
+            Для осіб із хронічними станами або під час вагітності рекомендується отримати фахову пораду перед використанням.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer id="footer">
+    <div class="wrap">
+      <div class="grid cols-2" style="align-items:start">
+        <div>
+          <p class="legal"><strong>2026 ⓒ Easy Loss</strong></p>
+          <nav class="menu" aria-label="Footer">
+            <a href="Politica.html">Політика конфіденційності</a>
+            <a href="Términos y condiciones.html">Умови використання</a>
+            <a href="Contacts.html">Контакти</a>
+          </nav>
+        </div>
+        <div>
+          <div class="legal">
+            <p><strong>Корисні матеріали:</strong></p>
+            <ul>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/28826840/" target="_blank" rel="noopener">Збалансоване харчування та підтримка здоров'я</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/33209931/" target="_blank" rel="noopener">Персоналізація харчових звичок</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/37513229/" target="_blank" rel="noopener">Мікробіота та метаболічний баланс</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
