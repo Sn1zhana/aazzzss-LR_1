@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6F8FC"/>
+      <stop offset="100%" stop-color="#ECF2FF"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#DDE8FF" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect x="140" y="160" width="520" height="720" rx="60" fill="url(#glass)" stroke="#C8D6F0" stroke-width="8"/>
+  <rect x="250" y="90" width="300" height="120" rx="40" fill="#0D3B66"/>
+  <rect x="260" y="280" width="280" height="200" rx="24" fill="#FFFFFF" stroke="#D0DCF2" stroke-width="4"/>
+  <text x="400" y="360" font-family="Arial, Helvetica, sans-serif" font-size="48" text-anchor="middle" fill="#0D3B66">Simpla 360</text>
+  <text x="400" y="420" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="#5B6470">Skin Care</text>
+  <rect x="260" y="520" width="280" height="220" rx="24" fill="#F8FAFF" stroke="#D0DCF2" stroke-width="4"/>
+  <text x="400" y="610" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#0D3B66">Symbolic product image</text>
+  <text x="400" y="650" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#5B6470">For layout preview</text>
+  <circle cx="400" cy="820" r="46" fill="#0D3B66" opacity="0.12"/>
+</svg>
